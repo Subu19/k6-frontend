@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Nav from "../components/nav";
 import "../css/main.css";
 import "../css/cart.css";
+import urls from "../constants/urls.json";
 import { CartContext, GlobalPopUP } from "../Helpers/Context";
 import { Button, makeStyles, Switch, TextField } from "@material-ui/core";
 import axios from "axios";
@@ -34,7 +35,7 @@ const Cart = (props) => {
     };
     console.log(newOrder);
     axios
-      .post("http://localhost:1337/api/orders", newOrder)
+      .post(`${urls.api}/orders`, newOrder)
       .then((res) => {
         console.log(res);
         if (res.status == 200) {
