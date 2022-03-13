@@ -1,0 +1,42 @@
+.NavBar {
+  background-color: var(--red);
+  margin: 0px;
+  padding: 0px;
+  height: 60px;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  box-shadow: rgb(41, 41, 41) 0px 5px 30px;
+  justify-content: flex-end;
+  color: white;
+  font-size: 20px;
+  align-items: flex-end;
+  z-index: 2;
+}
+.logo {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 250px;
+  width: auto;
+  transition: 0.6s;
+}
+.navs {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.nav {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+}
+.scrolled {
+  height: 150px;
+}
+.navSelected {
+  background-color: white;
+  color: black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}

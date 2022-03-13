@@ -1,0 +1,116 @@
+:root {
+  --red: #ff192e;
+  --yel: #fbb30b;
+  --gray: #555555;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Mukta", sans-serif;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  max-width: 1730px;
+  /* overflow-y: scroll; */
+}
+h1 {
+  margin: 0px;
+}
+.curve {
+  margin: 0px;
+  transform: translateY(-1px);
+  position: absolute;
+  top: 100%;
+  z-index: -1;
+}
+.curve2 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.containner {
+  max-width: 100%;
+  display: flex;
+  /* align-items: center; */
+
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+.addToCart {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.24);
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease-in-out;
+}
+.cartIconContainner {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--yel);
+  padding: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.342);
+}
+.animate {
+  animation: 1s bounce;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.cartIcon {
+  height: 40px;
+  width: 40px;
+}
+.cartCount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  align-items: center;
+  background-color: var(--red);
+  border-radius: 50%;
+}

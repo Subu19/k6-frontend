@@ -1,0 +1,4 @@
+{
+  "api": "http://localhost:1337/api",
+  "media": "http://localhost:1337"
+}
