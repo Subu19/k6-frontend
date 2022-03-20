@@ -27,16 +27,19 @@ import { useParams } from "react-router-dom";
 import Category from "../components/Category";
 import AddToCart from "../components/AddToCart";
 import { PopUpContext } from "../Helpers/Context";
+import Footer from "../components/Footer";
+import { useGetHome } from "../hooks/getHome";
 
 const useStyles = makeStyles({});
 
 const Menu = (props) => {
+  const { loadingEssentials, essentials } = useGetHome();
   const { category } = useParams();
   const { loadingFav, favourites } = useGetFavourites();
   const [visible, setVisible] = useState(false);
   const [popUpItem, setPopUpItem] = useState({});
   return (
-    <div className="main">
+    <div className="main" style={{ minHeight: "100vh" }}>
       <PopUpContext.Provider
         value={{ visible, setVisible, popUpItem, setPopUpItem }}
         className="main"
@@ -44,7 +47,7 @@ const Menu = (props) => {
         <AddToCart props={{ visible, setVisible, popUpItem }}></AddToCart>
         <Nav currentPath={props.currentPath}></Nav>
         <Sort></Sort>
-        <div className="containner">
+        <div className="containner" style={{ minHeight: "70vh" }}>
           {category ? (
             <Category category={category}></Category>
           ) : loadingFav ? (
@@ -74,6 +77,10 @@ const Menu = (props) => {
           )}
         </div>
       </PopUpContext.Provider>
+      <Footer
+        essentials={essentials}
+        loadingEssentials={loadingEssentials}
+      ></Footer>
     </div>
   );
 };

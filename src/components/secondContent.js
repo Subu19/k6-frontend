@@ -1,7 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-const SecondContent = () => {
+import { useGetHome } from "../hooks/getHome";
+import { CircularProgress } from "@material-ui/core";
+import urls from "../constants/urls.json";
+const SecondContent = (props) => {
+  const { loadingEssentials, essentials } = props;
   return (
     <div className="firstContent">
       <svg
@@ -17,39 +20,50 @@ const SecondContent = () => {
           fill="#555555"
         />
       </svg>
-      <motion.div
-        className="content-image"
-        initial={{ y: 200, opacity: 0 }}
-        whileInView={{ y: 0, transition: { duration: 0.5 }, opacity: 1 }}
-        viewport={{ once: false }}
-      >
-        <img
-          src="https://www.pngall.com/wp-content/uploads/2/Meal-PNG-Image-File.png"
-          width={"100%"}
-        ></img>
-      </motion.div>
-      <div className="content-text">
-        <motion.div
-          className="content-title"
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, transition: { duration: 0.7 }, opacity: 1 }}
-          viewport={{ once: false }}
-        >
-          Quality food requires quality ingredients
-        </motion.div>
-        <motion.div
-          className="content-desc"
-          initial={{ y: 100, opacity: 0 }}
-          whileInView={{ y: 0, transition: { duration: 0.7 }, opacity: 1 }}
-          viewport={{ once: false }}
-        >
-          This is where our chefs refuse to compromise, realizing that quality
-          ingredients are the best way to a quality plate for our guests. ​ We
-          try, where ever possible to source quality, foreign or local,
-          sustainable, &amp; environmentally friendly ingredients &amp; products
-          throughout our restaurant.
-        </motion.div>
-      </div>
+      {loadingEssentials ? (
+        <CircularProgress></CircularProgress>
+      ) : (
+        <>
+          <motion.div
+            className="content-image"
+            initial={{ y: 200, opacity: 0 }}
+            whileInView={{ y: 0, transition: { duration: 0.5 }, opacity: 1 }}
+            viewport={{ once: false }}
+          >
+            {essentials.HomeSecondContentImage ? (
+              <>
+                <img
+                  src={
+                    urls.media +
+                    essentials.HomeSecondContentImage.data.attributes.url
+                  }
+                  width={"100%"}
+                ></img>
+              </>
+            ) : (
+              ""
+            )}
+          </motion.div>
+          <div className="content-text">
+            <motion.div
+              className="content-title"
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, transition: { duration: 0.7 }, opacity: 1 }}
+              viewport={{ once: false }}
+            >
+              {essentials.HomeSecondContentTitle}
+            </motion.div>
+            <motion.div
+              className="content-desc"
+              initial={{ y: 100, opacity: 0 }}
+              whileInView={{ y: 0, transition: { duration: 0.7 }, opacity: 1 }}
+              viewport={{ once: false }}
+            >
+              {essentials.HomeSecondContentText}
+            </motion.div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

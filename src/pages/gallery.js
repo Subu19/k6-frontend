@@ -3,7 +3,11 @@ import React from "react";
 import Nav from "../components/nav";
 import { useGetGallery } from "../hooks/getGallery";
 import urls from "../constants/urls.json";
+import Footer from "../components/Footer";
+import { useGetHome } from "../hooks/getHome";
+
 const Gallery = (props) => {
+  const { loadingEssentials, essentials } = useGetHome();
   const { loadingGallery, gallery } = useGetGallery();
   return (
     <div className="main">
@@ -37,6 +41,10 @@ const Gallery = (props) => {
           ))}
         </ImageList>
       )}
+      <Footer
+        essentials={essentials}
+        loadingEssentials={loadingEssentials}
+      ></Footer>
     </div>
   );
 };

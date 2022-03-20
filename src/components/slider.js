@@ -1,24 +1,26 @@
 import React, { useEffect } from "react";
-import pizza from "../assets/pizza.png";
-import chicken from "../assets/chicken.png";
-import beer from "../assets/beer.png";
-import { Button, makeStyles } from "@material-ui/core";
+import urls from "../constants/urls.json";
+import { Button, CircularProgress, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
-const Slider = () => {
+const Slider = (props) => {
+  const { essentials, loadingEssentials } = props;
   const classes = styles();
   useEffect(() => {
-    setInterval(() => {
-      const length = document.getElementsByClassName("slider-img").length;
-      const element = document.getElementsByClassName("slider-image")[0];
-      if (element.scrollLeft < (length - 1) * element.clientWidth - 10) {
-        element.scrollLeft = element.scrollLeft + element.clientWidth;
-        console.log(element.scrollLeft + ".... of" + element.clientWidth);
-      } else {
-        element.scrollTo({ left: 0 });
-        console.log(element.scrollLeft + ".... of" + element.clientWidth);
-      }
-    }, 5000);
-  }, []);
+    if (essentials.HomeGallery) {
+      setInterval(() => {
+        const length = document.getElementsByClassName("slider-img").length;
+        const element = document.getElementsByClassName("slider-image")[0];
+        if (element.scrollLeft < (length - 1) * element.clientWidth - 10) {
+          element.scrollLeft = element.scrollLeft + element.clientWidth;
+          console.log(element.scrollLeft + ".... of" + element.clientWidth);
+        } else {
+          element.scrollTo({ left: 0 });
+          console.log(element.scrollLeft + ".... of" + element.clientWidth);
+        }
+      }, 5000);
+    }
+  }, [essentials]);
+
   return (
     <div className="Slider-containner">
       <div className="slider">
@@ -26,11 +28,11 @@ const Slider = () => {
           <div className="slider-subtitle">Hungry?</div>
           <div className="slider-title">Come, Get a Pizza</div>
           <div className="slider-desc">
-            Nostrud mollit consectetur enim ex. Eiusmod id ipsum sit cillum
-            deserunt sit Lorem ipsum occaecat laborum culpa cillum. Sunt mollit
-            minim id irure occaecat eu et elit exercitation dolor deserunt
-            dolore. Nostrud duis ex nisi laborum id est ea minim laboris. Esse
-            eu nostrud labore ut veniam.
+            {loadingEssentials ? (
+              <CircularProgress color="secondary"></CircularProgress>
+            ) : (
+              essentials.HomeText
+            )}
           </div>
           <Link to={"/menu"}>
             <Button
@@ -43,15 +45,24 @@ const Slider = () => {
           </Link>
         </div>
         <div className="slider-image">
-          <div className="slider-img-holder">
-            <img src={pizza} className="slider-img"></img>
-          </div>
-          <div className="slider-img-holder">
-            <img src={chicken} className="slider-img"></img>
-          </div>
-          <div className="slider-img-holder">
-            <img src={beer} className="slider-img"></img>
-          </div>
+          {loadingEssentials ? (
+            <CircularProgress color="secondary"></CircularProgress>
+          ) : essentials.HomeGallery ? (
+            essentials.HomeGallery.data.map((image) => {
+              return (
+                <>
+                  <div className="slider-img-holder">
+                    <img
+                      src={urls.media + image.attributes.url}
+                      className="slider-img"
+                    ></img>
+                  </div>
+                </>
+              );
+            })
+          ) : (
+            <CircularProgress></CircularProgress>
+          )}
         </div>
       </div>
       <svg

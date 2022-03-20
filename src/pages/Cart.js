@@ -6,8 +6,12 @@ import urls from "../constants/urls.json";
 import { CartContext, GlobalPopUP } from "../Helpers/Context";
 import { Button, makeStyles, Switch, TextField } from "@material-ui/core";
 import axios from "axios";
+import Footer from "../components/Footer";
+import { useGetHome } from "../hooks/getHome";
+
 const Cart = (props) => {
   const classes = styles();
+  const { loadingEssentials, essentials } = useGetHome();
   const { setPopupVisible, setTitle, setContext } = useContext(GlobalPopUP);
   const { cart, setCart } = useContext(CartContext);
   const [total, setTotal] = useState(0);
@@ -329,8 +333,14 @@ const Cart = (props) => {
           </div>
         </div>
       ) : (
-        <div className="containner">Cart is Empty!!! </div>
+        <div className="containner" style={{ height: "100vh" }}>
+          Cart is Empty!!!{" "}
+        </div>
       )}
+      <Footer
+        essentials={essentials}
+        loadingEssentials={loadingEssentials}
+      ></Footer>
     </div>
   );
 };

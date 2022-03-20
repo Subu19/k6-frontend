@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Nav from "../components/nav";
 import Slider from "../components/slider";
 import FirstContent from "../components/firstContent";
@@ -8,14 +8,24 @@ import string from "../assets/string.svg";
 import "../css/home.css";
 import "../css/main.css";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
+import { useGetHome } from "../hooks/getHome";
 const Home = (props) => {
   const classes = styles();
+  const { loadingEssentials, essentials } = useGetHome();
+
   return (
     <div className="main">
       <Nav currentPath={props.currentPath}></Nav>
-      <Slider></Slider>
+      <Slider
+        essentials={essentials}
+        loadingEssentials={loadingEssentials}
+      ></Slider>
       <div className="centerIt">
-        <FirstContent></FirstContent>
+        <FirstContent
+          essentials={essentials}
+          loadingEssentials={loadingEssentials}
+        ></FirstContent>
       </div>
 
       <img
@@ -24,10 +34,13 @@ const Home = (props) => {
         style={{ transform: "translateY(15px)" }}
       ></img>
       <div className="centerIt yellowBack">
-        <SecondContent></SecondContent>
+        <SecondContent
+          essentials={essentials}
+          loadingEssentials={loadingEssentials}
+        ></SecondContent>
       </div>
       <div className="centerIt grayBack motd">
-        <h1>“Lets meet and chase the flavors at k6”</h1>
+        <h1>“{loadingEssentials ? "" : essentials.Tagline}”</h1>
       </div>
       <div className="centerIt grayBack">
         <Link to={"/contactUs"}>
@@ -41,6 +54,10 @@ const Home = (props) => {
           </Button>
         </Link>
       </div>
+      <Footer
+        essentials={essentials}
+        loadingEssentials={loadingEssentials}
+      ></Footer>
     </div>
   );
 };

@@ -63,7 +63,7 @@ const Nav = (props) => {
         <Link to={"/gallery"} className="nav" id="galleryNav">
           Gallery
         </Link>
-        <Link to={"Contact Us"} className="nav" id="contactNav">
+        <Link to={"/contactus"} className="nav" id="contactNav">
           Contact Us
         </Link>
       </div>

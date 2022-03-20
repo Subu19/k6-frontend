@@ -8,6 +8,8 @@ import Gallery from "../pages/gallery";
 import Cart from "../pages/Cart";
 import { CartContext } from "../Helpers/Context";
 import CartIcon from "../components/CartIcon";
+import ContactUs from "../pages/ContactUs";
+import ScrollToTop from "../components/ScrollToTop";
 
 function Path() {
   const { cart, setCart } = useContext(CartContext);
@@ -15,6 +17,7 @@ function Path() {
     <>
       <Router>
         {cart.length > 0 ? <CartIcon></CartIcon> : ""}
+        <ScrollToTop></ScrollToTop>
         <Routes>
           <Route path="/" element={<Home currentPath="homeNav"></Home>} />
           <Route path="/home" element={<Home currentPath="homeNav"></Home>} />
@@ -28,6 +31,10 @@ function Path() {
             element={<Gallery currentPath="galleryNav"></Gallery>}
           />
           <Route path="/cart" element={<Cart currentPath="cartNav"></Cart>} />
+          <Route
+            path="/contactus"
+            element={<ContactUs currentPath="contactNav"></ContactUs>}
+          />
           <Route path="*" element={<Error currentPath="error"></Error>} />
         </Routes>
       </Router>
