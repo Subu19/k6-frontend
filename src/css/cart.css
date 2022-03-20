@@ -149,3 +149,35 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+.mapIframe {
+  height: 400px;
+  width: 400px;
+}
+@media screen and (max-width: 400px) {
+  .cart-containner {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  .order-containner {
+    box-shadow: none;
+  }
+  .order {
+    flex-wrap: wrap;
+  }
+  .order-title {
+    margin-right: 5px;
+  }
+  .order-price {
+    margin-right: 5px;
+  }
+  .qt-qt {
+    width: 10px;
+  }
+  .order-sum {
+    padding: 10px;
+  }
+  .mapIframe {
+    height: 400px;
+    width: 100%;
+  }
+}

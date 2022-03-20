@@ -3,6 +3,7 @@ import pizza from "../assets/pizza.png";
 import chicken from "../assets/chicken.png";
 import beer from "../assets/beer.png";
 import { Button, makeStyles } from "@material-ui/core";
+import { Link } from "react-router-dom";
 const Slider = () => {
   const classes = styles();
   useEffect(() => {
@@ -31,13 +32,15 @@ const Slider = () => {
             dolore. Nostrud duis ex nisi laborum id est ea minim laboris. Esse
             eu nostrud labore ut veniam.
           </div>
-          <Button
-            variant="contained"
-            color="primary"
-            classes={{ root: classes.buttonStyle }}
-          >
-            Order Now
-          </Button>
+          <Link to={"/menu"}>
+            <Button
+              variant="contained"
+              color="primary"
+              classes={{ root: classes.buttonStyle }}
+            >
+              Order Now
+            </Button>
+          </Link>
         </div>
         <div className="slider-image">
           <div className="slider-img-holder">

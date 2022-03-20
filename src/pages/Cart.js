@@ -279,7 +279,7 @@ const Cart = (props) => {
                   variant="outlined"
                   name="address"
                   margin="dense"
-                  style={{ width: "500px" }}
+                  style={{ width: "500px", maxWidth: "90%" }}
                   classes={{ root: classes.inputStyle }}
                 />
                 <br></br>
@@ -297,8 +297,7 @@ const Cart = (props) => {
                   </Button>
                 ) : geoStatus == "Found" ? (
                   <iframe
-                    width="400"
-                    height="400"
+                    className="mapIframe"
                     frameborder="0"
                     scrolling="no"
                     marginheight="0"

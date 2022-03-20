@@ -36,43 +36,45 @@ const Menu = (props) => {
   const [visible, setVisible] = useState(false);
   const [popUpItem, setPopUpItem] = useState({});
   return (
-    <PopUpContext.Provider
-      value={{ visible, setVisible, popUpItem, setPopUpItem }}
-      className="main"
-    >
-      <AddToCart props={{ visible, setVisible, popUpItem }}></AddToCart>
-      <Nav currentPath={props.currentPath}></Nav>
-      <Sort></Sort>
-      <div className="containner">
-        {category ? (
-          <Category category={category}></Category>
-        ) : loadingFav ? (
-          <CircularProgress color="secondary"></CircularProgress>
-        ) : (
-          <>
-            <div className="cat-name">Popular</div>
-            {favourites.map((item) => {
-              return (
-                <Card
-                  img={
-                    urls.media +
-                    item.attributes.menu.data.attributes.Picture.data[0]
-                      .attributes.formats.thumbnail.url
-                  }
-                  title={item.attributes.menu.data.attributes.Name}
-                  desc={item.attributes.menu.data.attributes.Description}
-                  veg={item.attributes.menu.data.attributes.Veg}
-                  spicy={item.attributes.menu.data.attributes.Spicy}
-                  price={item.attributes.menu.data.attributes.Price}
-                  orderable={item.attributes.menu.data.attributes.orderable}
-                  menuId={item.attributes.menu.data.id}
-                ></Card>
-              );
-            })}
-          </>
-        )}
-      </div>
-    </PopUpContext.Provider>
+    <div className="main">
+      <PopUpContext.Provider
+        value={{ visible, setVisible, popUpItem, setPopUpItem }}
+        className="main"
+      >
+        <AddToCart props={{ visible, setVisible, popUpItem }}></AddToCart>
+        <Nav currentPath={props.currentPath}></Nav>
+        <Sort></Sort>
+        <div className="containner">
+          {category ? (
+            <Category category={category}></Category>
+          ) : loadingFav ? (
+            <CircularProgress color="secondary"></CircularProgress>
+          ) : (
+            <>
+              <div className="cat-name">Popular</div>
+              {favourites.map((item) => {
+                return (
+                  <Card
+                    img={
+                      urls.media +
+                      item.attributes.menu.data.attributes.Picture.data[0]
+                        .attributes.formats.thumbnail.url
+                    }
+                    title={item.attributes.menu.data.attributes.Name}
+                    desc={item.attributes.menu.data.attributes.Description}
+                    veg={item.attributes.menu.data.attributes.Veg}
+                    spicy={item.attributes.menu.data.attributes.Spicy}
+                    price={item.attributes.menu.data.attributes.Price}
+                    orderable={item.attributes.menu.data.attributes.orderable}
+                    menuId={item.attributes.menu.data.id}
+                  ></Card>
+                );
+              })}
+            </>
+          )}
+        </div>
+      </PopUpContext.Provider>
+    </div>
   );
 };
 

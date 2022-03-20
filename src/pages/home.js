@@ -7,6 +7,7 @@ import { Button, makeStyles } from "@material-ui/core";
 import string from "../assets/string.svg";
 import "../css/home.css";
 import "../css/main.css";
+import { Link } from "react-router-dom";
 const Home = (props) => {
   const classes = styles();
   return (
@@ -25,18 +26,20 @@ const Home = (props) => {
       <div className="centerIt yellowBack">
         <SecondContent></SecondContent>
       </div>
-      <div className="centerIt grayBack">
+      <div className="centerIt grayBack motd">
         <h1>“Lets meet and chase the flavors at k6”</h1>
       </div>
       <div className="centerIt grayBack">
-        <Button
-          variant="contained"
-          color="primary"
-          classes={{ root: classes.buttonStyle }}
-          size="large"
-        >
-          Book Table
-        </Button>
+        <Link to={"/contactUs"}>
+          <Button
+            variant="contained"
+            color="primary"
+            classes={{ root: classes.buttonStyle }}
+            size="large"
+          >
+            Book Table
+          </Button>
+        </Link>
       </div>
     </div>
   );
