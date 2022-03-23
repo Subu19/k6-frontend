@@ -49,7 +49,9 @@ const Nav = (props) => {
   };
   return (
     <div className="NavBar">
-      <img src={logo} className="logo"></img>
+      <Link to={"/home"}>
+        <img src={logo} className="logo"></img>
+      </Link>
       <div className="navs">
         <Link to={"/home"} className="nav" id="homeNav">
           Home

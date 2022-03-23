@@ -338,7 +338,10 @@ const Cart = (props) => {
           </div>
         </div>
       ) : (
-        <div className="containner" style={{ height: "100vh" }}>
+        <div
+          className="containner"
+          style={{ height: "100vh", fontSize: "35px", color: "var(--yel)" }}
+        >
           Cart is Empty!!!{" "}
         </div>
       )}

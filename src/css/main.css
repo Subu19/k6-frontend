@@ -6,7 +6,7 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Mukta", sans-serif;
+  font-family: "Didact Gothic", sans-serif;
   overflow-x: hidden;
   height: 100%;
   width: 100%;
@@ -118,6 +118,9 @@ a {
 }
 .mobile-menu {
   display: none;
+}
+.yellow {
+  color: var(--yel);
 }
 @media screen and (max-width: 400px) {
   .main {
