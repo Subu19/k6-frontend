@@ -5,12 +5,17 @@ import { useGetGallery } from "../hooks/getGallery";
 import urls from "../constants/urls.json";
 import Footer from "../components/Footer";
 import { useGetHome } from "../hooks/getHome";
+import Helmet from "react-helmet";
 
 const Gallery = (props) => {
   const { loadingEssentials, essentials } = useGetHome();
   const { loadingGallery, gallery } = useGetGallery();
   return (
     <div className="main">
+      <Helmet>
+        <title>Gallery</title>
+        <meta name="description" content="Gallery of our resturant." />
+      </Helmet>
       <Nav currentPath={props.currentPath}></Nav>
 
       {loadingGallery ? (

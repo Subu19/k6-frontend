@@ -10,12 +10,20 @@ import "../css/main.css";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { useGetHome } from "../hooks/getHome";
+import Helmet from "react-helmet";
 const Home = (props) => {
   const classes = styles();
   const { loadingEssentials, essentials } = useGetHome();
 
   return (
     <div className="main">
+      <Helmet>
+        <title>Home</title>
+        <meta
+          name="description"
+          content="K6 Pizza and Bars resturant. Order your food now!"
+        />
+      </Helmet>
       <Nav currentPath={props.currentPath}></Nav>
       <Slider
         essentials={essentials}

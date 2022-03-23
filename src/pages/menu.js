@@ -29,6 +29,7 @@ import AddToCart from "../components/AddToCart";
 import { PopUpContext } from "../Helpers/Context";
 import Footer from "../components/Footer";
 import { useGetHome } from "../hooks/getHome";
+import Helmet from "react-helmet";
 
 const useStyles = makeStyles({});
 
@@ -40,6 +41,10 @@ const Menu = (props) => {
   const [popUpItem, setPopUpItem] = useState({});
   return (
     <div className="main" style={{ minHeight: "100vh" }}>
+      <Helmet>
+        <title>Menu</title>
+        <meta name="description" content="List of our menu." />
+      </Helmet>
       <PopUpContext.Provider
         value={{ visible, setVisible, popUpItem, setPopUpItem }}
         className="main"

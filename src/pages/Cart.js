@@ -8,6 +8,7 @@ import { Button, makeStyles, Switch, TextField } from "@material-ui/core";
 import axios from "axios";
 import Footer from "../components/Footer";
 import { useGetHome } from "../hooks/getHome";
+import Helmet from "react-helmet";
 
 const Cart = (props) => {
   const classes = styles();
@@ -161,6 +162,10 @@ const Cart = (props) => {
   }, [cart]);
   return (
     <div className="main cartMain">
+      <Helmet>
+        <title>Cart</title>
+        <meta name="description" content="Check out your orders." />
+      </Helmet>
       <Nav currentPath={props.currentPath}></Nav>
       {cart.length > 0 ? (
         <div className="containner">
