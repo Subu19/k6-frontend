@@ -1,4 +1,4 @@
 {
-  "api": "http://k6restro.herokuapp.com/api",
-  "media": "http://k6restro.herokuapp.com"
+  "api": "https://k6restro.herokuapp.com/api",
+  "media": "https://k6restro.herokuapp.com"
 }
