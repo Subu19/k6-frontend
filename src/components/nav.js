@@ -16,7 +16,7 @@ const Nav = (props) => {
     const mobileNav = document.getElementsByClassName("mobile-nav");
     for (let i = 0; i < mobileNav.length; i++) {
       const element = mobileNav[i];
-      element.classList.remove("navSelectedM");
+      element.classList.remove("navSelected");
     }
     document.getElementById(currentPath + "M")?.classList?.add("navSelectedM");
     document.getElementById(currentPath)?.classList?.add("navSelected");
