@@ -36,12 +36,15 @@ const Gallery = (props) => {
       ) : (
         <div
           className="containner"
-          style={{ marginBottom: "100px", paddingTop: "100px" }}
+          style={{
+            marginBottom: "100px",
+            height: "100vh",
+          }}
         >
           <div className="centerIt" style={{ marginBottom: "50px" }}>
             <h1 className="yellow">Gallery</h1>
           </div>
-          <GalleryLib photos={gallery}></GalleryLib>
+          <GalleryLib margin={2} photos={gallery}></GalleryLib>
           {/* <LightGallery speed={500} plugins={[lgThumbnail, lgZoom]}>
             {gallery.map((image) => {
               return (

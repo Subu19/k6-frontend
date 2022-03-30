@@ -6,7 +6,7 @@ import urls from "../constants/urls.json";
 const SecondContent = (props) => {
   const { loadingEssentials, essentials } = props;
   return (
-    <div className="firstContent">
+    <div className="secondContent">
       <svg
         width="1727"
         height="241"

@@ -62,7 +62,7 @@
 }
 .slider-desc {
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   max-width: 60%;
 }
 .firstContent {
@@ -70,6 +70,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1300px;
+}
+.secondContent {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   max-width: 1300px;
 }
 .content-text {
@@ -82,18 +89,19 @@
 .content-image {
   flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 .content-img {
   box-shadow: black 0px 0px 20px;
 }
 .content-title {
-  font-size: 25px;
+  font-size: 28px;
 }
 .content-desc {
   margin-top: 10px;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 .centerIt {
   display: flex;

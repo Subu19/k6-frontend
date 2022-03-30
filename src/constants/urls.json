@@ -1,4 +1,4 @@
 {
-  "api": "https://k6restro.herokuapp.com/api",
-  "media": "https://k6restro.herokuapp.com"
+  "api": "http://localhost:1337/api",
+  "media": "http://localhost:1337"
 }

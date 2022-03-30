@@ -3,6 +3,9 @@
   --yel: #fbb30b;
   --gray: #555555;
 }
+#root {
+  overflow-x: hidden;
+}
 body {
   margin: 0px;
   padding: 0px;
@@ -10,15 +13,17 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .main {
   margin: 0px;
   padding: 0px;
+  height: 100vh;
+  width: 100vw;
   min-height: 100vh;
   max-width: 1730px;
-  height: 100%;
-  width: 100%;
   /* overflow-y: scroll; */
 }
 h1 {
