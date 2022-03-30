@@ -63,7 +63,7 @@
     flex-direction: column;
   }
   .contact-containner {
-    margin-top: 100px;
+    padding-top: 100px;
   }
   .contact-subtitle {
     padding: 20px;
