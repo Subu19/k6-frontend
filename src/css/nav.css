@@ -6,6 +6,7 @@
   position: absolute;
   top: 0px;
   width: 100%;
+  max-width: 1730px;
   display: flex;
   box-shadow: rgb(41, 41, 41) 0px 5px 30px;
   justify-content: flex-end;
