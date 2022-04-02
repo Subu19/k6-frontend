@@ -18,10 +18,8 @@ export const useGetGallery = () => {
           };
         })
       );
-      console.log(newGallary);
       setGallery(newGallary);
       setLoadingGallery(false);
-      // console.log(newGallery);
     });
   };
   useEffect(() => {

@@ -9,7 +9,6 @@ export const useGetMenu = () => {
     axios.get(urls.api + "/menus?populate=%2A").then((res) => {
       setMenu(res.data.data);
       setLoadingMenu(false);
-      console.log(res.data.data);
     });
   };
   useEffect(() => {
@@ -28,7 +27,6 @@ export const useGetFavourites = () => {
       .then((res) => {
         setFav(res.data.data);
         setLoadingFav(false);
-        console.log(res.data.data);
       });
   };
   useEffect(() => {
@@ -49,7 +47,6 @@ export const useGetCategory = (category) => {
       .then((res) => {
         setCategory(res.data.data[0]);
         setLoadingCat(false);
-        console.log(res.data.data[0]);
       });
   };
   useEffect(() => {

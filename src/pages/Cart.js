@@ -38,11 +38,9 @@ const Cart = (props) => {
         },
       },
     };
-    console.log(newOrder);
     axios
       .post(`${urls.api}/orders`, newOrder)
       .then((res) => {
-        console.log(res);
         if (res.status == 200) {
           if (localStorage.getItem("OldCart")) {
             const newCart = JSON.parse(localStorage.getItem("OldCart"));

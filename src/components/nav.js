@@ -20,21 +20,27 @@ const Nav = (props) => {
     }
     document.getElementById(currentPath + "M")?.classList?.add("navSelectedM");
     document.getElementById(currentPath)?.classList?.add("navSelected");
-    if (window.scrollY <= 50 && currentPath == "homeNav") {
+    if (
+      document.getElementById("root").scrollTop <= 50 &&
+      currentPath == "homeNav"
+    ) {
       document.getElementsByClassName("logo")[0].classList.remove("scrolled");
     } else {
       document.getElementsByClassName("logo")[0].classList.add("scrolled");
     }
   }, [currentPath]);
   const checkScroll = () => {
-    if (window.scrollY <= 50 && currentPath == "homeNav") {
+    if (
+      document.getElementById("root").scrollTop <= 50 &&
+      currentPath == "homeNav"
+    ) {
       document.getElementsByClassName("logo")[0].classList.remove("scrolled");
     } else {
       document.getElementsByClassName("logo")[0].classList.add("scrolled");
     }
   };
   useEffect(() => {
-    document.addEventListener("scroll", checkScroll);
+    document.getElementById("root").addEventListener("scroll", checkScroll);
   }, []);
   const toggleDrawer = (open) => (event) => {
     if (
@@ -50,7 +56,7 @@ const Nav = (props) => {
   return (
     <div className="NavBar">
       <Link to={"/home"}>
-        <img src={logo} className="logo"></img>
+        <img src={logo} className="logo scrolled"></img>
       </Link>
       <div className="navs">
         <Link to={"/home"} className="nav" id="homeNav">

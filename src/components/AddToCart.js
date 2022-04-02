@@ -15,7 +15,6 @@ const AddToCart = ({ props }) => {
       quantity: qt,
     };
     setCart([...cart, newItem]);
-    console.log(cart);
     setVisible(false);
   };
   return (

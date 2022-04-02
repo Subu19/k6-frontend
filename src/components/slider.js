@@ -1,30 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.css";
 import urls from "../constants/urls.json";
 import { Button, CircularProgress, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
 const Slider = (props) => {
   const { essentials, loadingEssentials } = props;
+  // const [slides, setSlides] = useState(null);
+  // useEffect(async () => {
+  //   if (!loadingEssentials) {
+  //     if (essentials.HomeGallery) {
+  //       var newSlider = await Promise.all(
+  //         essentials.HomeGallery.data.map((image) => {
+  //           return (
+  //             <div>
+  //               <img src={urls.media + image.attributes.url}></img>
+  //               <p className="legend">Legend 1</p>
+  //             </div>
+  //           );
+  //         })
+  //       );
+  //       console.log(newSlider);
+  //       setSlides(newSlider);
+  //     }
+  //   }
+  // }, [loadingEssentials, essentials]);
   const classes = styles();
-  useEffect(() => {
-    if (essentials.HomeGallery) {
-      setInterval(() => {
-        const length = document.getElementsByClassName("slider-img").length;
-        const element = document.getElementsByClassName("slider-image")[0];
-        if (element.scrollLeft < (length - 1) * element.clientWidth - 10) {
-          element.scrollLeft = element.scrollLeft + element.clientWidth;
-          console.log(element.scrollLeft + ".... of" + element.clientWidth);
-        } else {
-          element.scrollTo({ left: 0 });
-          console.log(element.scrollLeft + ".... of" + element.clientWidth);
-        }
-      }, 5000);
-    }
-  }, [essentials]);
+  // useEffect(() => {
+  //   if (essentials.HomeGallery) {
+  //     let interval = setInterval(() => {
+  //       const length = document.getElementsByClassName("slider-img").length;
+  //       if (length) {
+  //         const element = document.getElementsByClassName("slider-image")[0];
+  //         if (element.scrollLeft < (length - 1) * element.clientWidth - 10) {
+  //           element.scrollLeft = element.scrollLeft + element.clientWidth;
+  //         } else {
+  //           element.scrollTo({ left: 0 });
+  //         }
+  //       } else {
+  //         clearInterval(interval);
+  //       }
+  //     }, 5000);
+  //   }
+  // }, [essentials]);
 
   return (
-    <div className="Slider-containner">
-      <div className="slider">
-        <div className="slider-content">
+    <div className="sliderContainner">
+      <div className="sliderBox">
+        <div className="sliderContent">
           <div className="slider-subtitle">Hungry?</div>
           <div className="slider-title">Come, Get a Pizza</div>
           <div className="slider-desc">
@@ -45,21 +68,40 @@ const Slider = (props) => {
           </Link>
         </div>
         <div className="slider-image">
+          {/* {slides == null ? (
+            <CircularProgress></CircularProgress>
+          ) : (
+            <Carousel showArrows={true}>
+              {slides.map((img) => {
+                return img;
+              })}
+            </Carousel>
+          )} */}
           {loadingEssentials ? (
             <CircularProgress color="secondary"></CircularProgress>
           ) : essentials.HomeGallery ? (
-            essentials.HomeGallery.data.map((image) => {
-              return (
-                <>
-                  <div className="slider-img-holder">
+            <Carousel
+              infiniteLoop={true}
+              autoPlay={true}
+              showThumbs={false}
+              showArrows={false}
+              dynamicHeight={false}
+              showIndicators={true}
+              showStatus={false}
+            >
+              {essentials.HomeGallery.data.map((image) => {
+                return (
+                  <div>
                     <img
                       src={urls.media + image.attributes.url}
-                      className="slider-img"
+                      style={{
+                        maxHeight: "500px",
+                      }}
                     ></img>
                   </div>
-                </>
-              );
-            })
+                );
+              })}
+            </Carousel>
           ) : (
             <CircularProgress></CircularProgress>
           )}

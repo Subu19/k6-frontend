@@ -41,7 +41,10 @@ const Gallery = (props) => {
             height: "100vh",
           }}
         >
-          <div className="centerIt" style={{ marginBottom: "50px" }}>
+          <div
+            className="centerIt"
+            style={{ marginBottom: "50px", marginTop: "60px" }}
+          >
             <h1 className="yellow">Gallery</h1>
           </div>
           <GalleryLib margin={2} photos={gallery}></GalleryLib>
