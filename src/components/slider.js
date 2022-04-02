@@ -88,6 +88,7 @@ const Slider = (props) => {
               dynamicHeight={false}
               showIndicators={true}
               showStatus={false}
+              swipeable={false}
             >
               {essentials.HomeGallery.data.map((image) => {
                 return (
