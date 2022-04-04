@@ -1,5 +1,5 @@
 {
-  "api": "http://localhost:1337/api",
-  "media": "http://localhost:1337",
+  "api": "https://admin.k6pizzaandbar.com.np/api",
+  "media": "https://admin.k6pizzaandbar.com.np",
   "currentUrl": "https://k6pizzaandbar.com.np"
 }
