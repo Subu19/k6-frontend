@@ -24,7 +24,11 @@ const ContactUs = (props) => {
         <div className="contact-imgbox">
           <img
             src={
-              "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
+              loadingEssentials
+                ? ""
+                : essentials.ContactUsBanner
+                ? urls.media + essentials.ContactUsBanner.data.attributes.url
+                : ""
             }
             className="contact-img"
           ></img>
@@ -65,7 +69,11 @@ const ContactUs = (props) => {
                 className="contactInput"
               ></textarea>
               <input type="hidden" name="_next" value={urls.currentUrl}></input>
-              <input type={"hidden"} name="_subject" value={"New Message"} />
+              <input
+                type={"hidden"}
+                name="_subject"
+                value={"New Message Alert!!!!!!!!"}
+              />
               <input type={"hidden"} name="_captcha" value="false"></input>
               <Button
                 type={"submit"}

@@ -8,6 +8,7 @@ export const useGetHome = () => {
   const getEssentials = () => {
     axios.get(urls.api + "/essential?populate=%2A").then((res) => {
       if (res.data.data != null) {
+        console.log(res.data.data);
         setLoadingEssentials(false);
         setEssentials(res.data.data.attributes);
       } else {

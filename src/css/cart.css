@@ -1,6 +1,6 @@
-/* .cartMain {
+.cartMain {
   background-color: rgb(53, 53, 53);
-} */
+}
 .cart-containner {
   max-width: 1200px;
   display: flex;
@@ -9,6 +9,7 @@
   height: auto;
   margin-bottom: 20px;
   background-color: white;
+  margin-top: 60px;
 }
 .order-containner {
   flex: 2;
@@ -156,7 +157,8 @@
 @media screen and (max-width: 400px) {
   .cart-containner {
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 40px;
+    margin-top: 40px;
   }
   .order-containner {
     box-shadow: none;

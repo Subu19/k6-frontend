@@ -10,7 +10,8 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Didact Gothic", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
   height: 100%;
   width: 100%;
   display: flex;
@@ -192,6 +193,8 @@ a {
   .content-image {
     width: 100%;
     overflow: hidden;
+    max-width: none;
+    max-height: none;
     display: flex;
     justify-content: center;
   }

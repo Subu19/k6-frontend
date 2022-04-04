@@ -159,14 +159,14 @@ const Cart = (props) => {
     setTotal(newTotal);
   }, [cart]);
   return (
-    <div className="main cartMain">
+    <div className="main ">
       <Helmet>
         <title>Cart</title>
         <meta name="description" content="Check out your orders." />
       </Helmet>
       <Nav currentPath={props.currentPath}></Nav>
       {cart.length > 0 ? (
-        <div className="containner">
+        <div className="containner cartMain">
           <div className="cart-containner">
             <div className="order-containner">
               {cart.map((item) => {

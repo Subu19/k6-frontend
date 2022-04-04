@@ -76,7 +76,7 @@
   padding: 20px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   max-width: 1300px;
 }
 .secondContent {
@@ -95,6 +95,9 @@
 }
 .content-image {
   flex: 1;
+  max-width: 50%;
+  max-height: 400px;
+  overflow: hidden;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -109,6 +112,7 @@
   margin-top: 10px;
   margin-bottom: 20px;
   font-size: 18px;
+  flex: 1;
 }
 .centerIt {
   display: flex;
