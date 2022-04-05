@@ -130,7 +130,7 @@ a {
 .yellow {
   color: var(--yel);
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .main {
     width: 100vw;
     max-width: 100vw;

@@ -27,7 +27,7 @@
 .footer-contacts div {
   margin-left: 10px;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .footer {
     width: 100vw;
     padding: 0px;
