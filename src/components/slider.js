@@ -49,7 +49,7 @@ const Slider = (props) => {
       <div className="sliderBox">
         <div className="sliderContent">
           <div className="slider-subtitle">Hungry?</div>
-          <div className="slider-title">Come, Get a Pizza</div>
+          <div className="slider-title">Come, Get a crust Pizza</div>
           <div className="slider-desc">
             {loadingEssentials ? (
               <CircularProgress color="secondary"></CircularProgress>

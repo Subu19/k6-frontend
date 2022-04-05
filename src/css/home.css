@@ -18,11 +18,13 @@
 }
 
 .sliderContent {
-  margin-top: 150px;
+  margin-top: 167px;
   flex: 1;
   padding: 20px;
-  display: block;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-end; */
+  justify-content: center;
 }
 
 .slider-image {
@@ -65,7 +67,8 @@
   font-weight: bold;
   padding: 0px;
   margin: 0px;
-  font-size: 70px;
+
+  font-size: 50px;
 }
 .slider-desc {
   color: white;

@@ -7,19 +7,26 @@ import { Box, SwipeableDrawer } from "@material-ui/core";
 const Nav = (props) => {
   const [boxOpen, setboxOpen] = React.useState(false);
   const { currentPath } = props;
-  useEffect(() => {
+  const removeClass = async (element, classname) => {
+    element.classList.remove(classname);
+  };
+  useEffect(async () => {
     const navs = document.getElementsByClassName("nav");
+    const mobileNav = document.getElementsByClassName("mobile-nav");
     for (let i = 0; i < navs.length; i++) {
       const element = navs[i];
-      element.classList.remove("navSelected");
+      await removeClass(element, "navSelected");
+      console.log("removed");
     }
-    const mobileNav = document.getElementsByClassName("mobile-nav");
     for (let i = 0; i < mobileNav.length; i++) {
       const element = mobileNav[i];
-      element.classList.remove("navSelected");
+      // element.classList.remove("navSelectedM");
+      await removeClass(element, "navSelectedM");
+      console.log("removed");
     }
-    document.getElementById(currentPath + "M")?.classList?.add("navSelectedM");
+    console.log("assigned");
     document.getElementById(currentPath)?.classList?.add("navSelected");
+    document.getElementById(currentPath + "M")?.classList?.add("navSelectedM");
     if (
       document.getElementById("root").scrollTop <= 50 &&
       currentPath == "homeNav"
@@ -71,6 +78,7 @@ const Nav = (props) => {
         <Link to={"/gallery"} className="nav" id="galleryNav">
           Gallery
         </Link>
+
         <Link to={"/contactus"} className="nav" id="contactNav">
           Contact Us
         </Link>
@@ -103,6 +111,9 @@ const Nav = (props) => {
             </Link>
             <Link to={"/cart"} className="mobile-nav" id="cartNavM">
               Cart
+            </Link>
+            <Link to={"/gallery"} className="mobile-nav" id="galleryNavM">
+              Gallery
             </Link>
             <Link to={"/contactUs"} className="mobile-nav" id="contactNavM">
               Contact Us

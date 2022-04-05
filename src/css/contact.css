@@ -33,8 +33,9 @@
 
 .contact-info {
   display: flex;
+  flex: 1;
   align-items: center;
-  margin-bottom: 10px;
+  margin-left: 50px;
 }
 .contact-form {
   display: flex;
@@ -62,31 +63,64 @@
 }
 .other-contacts-title {
   position: absolute;
-  background-color: rgb(242, 242, 242);
   height: 30px;
   padding: 10px;
+  background-color: white;
   font-size: 25px;
   font-weight: bolder;
   color: var(--red);
 }
+.other-contact-box {
+  background-color: var(--red);
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: space;
+  width: 80%;
+  height: fit-content;
+}
 .other-contacts {
   border-style: solid;
-  border-width: 10px;
-  border-color: rgb(255, 255, 255);
+  border-width: 5px;
+  border-radius: 50px;
+  border-color: var(--red);
   width: 100%;
   display: flex;
   min-height: 200px;
   justify-content: space-evenly;
   margin: 20px;
+  align-items: center;
 }
 .other-contact {
   margin: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: var(--gray);
   font-size: 15px;
+  width: 100px;
+  position: relative;
+}
+.contact-info-containner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  justify-content: space-between;
+}
+.contact-info-logos {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  background-color: var(--red);
+  border-radius: 20px;
+}
+.contact-info-logo {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
 }
 .other-contact a {
   color: var(--gray);
@@ -96,13 +130,32 @@
   height: 60px;
   width: 60px;
   border-radius: 10px;
-  filter: grayscale(100%);
+}
+.other-contact-desc {
+  position: absolute;
+  top: 150%;
+  color: black;
+  font-weight: 400;
 }
 @media screen and (max-width: 400px) {
   .contact-box {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0px;
+    margin: 0px;
+    width: 80%;
+  }
+  .other-contact-box {
+    background-color: transparent;
+    flex-wrap: wrap;
+  }
+  .other-contact {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .other-contact-desc {
+    top: 100%;
   }
   .contact-imgbox {
     height: 200px;

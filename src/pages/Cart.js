@@ -272,6 +272,7 @@ const Cart = (props) => {
                 label="Phone Number"
                 variant="outlined"
                 name="phone_no"
+                color="primary"
                 defaultValue={localStorage.getItem("Phone Number")}
                 type={"tel"}
                 inputProps={{ pattern: "[0-9]{10}" }}

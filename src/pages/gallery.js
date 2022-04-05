@@ -38,7 +38,8 @@ const Gallery = (props) => {
           className="containner"
           style={{
             marginBottom: "100px",
-            height: "100vh",
+            height: "auto",
+            minHeight: "100vh",
           }}
         >
           <div

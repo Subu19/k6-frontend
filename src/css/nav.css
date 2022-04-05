@@ -8,12 +8,13 @@
   width: 100%;
   max-width: 1730px;
   display: flex;
-  box-shadow: rgb(41, 41, 41) 0px 5px 30px;
+  box-shadow: rgba(41, 41, 41, 0.466) 0px 5px 30px;
   justify-content: flex-end;
   color: white;
   font-size: 20px;
   align-items: flex-end;
   z-index: 2;
+  font-weight: 400;
 }
 .logo {
   position: absolute;
