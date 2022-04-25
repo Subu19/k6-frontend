@@ -25,8 +25,6 @@ export const useGetFavourites = () => {
     axios
       .get(urls.api + "/favourites?populate[menu][populate][0]=Picture")
       .then((res) => {
-        console.log(res);
-
         setFav(res.data.data);
         setLoadingFav(false);
       })
