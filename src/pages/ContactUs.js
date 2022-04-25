@@ -187,7 +187,7 @@ const ContactUs = (props) => {
               marginheight="0"
               marginwidth="0"
               className="contact-map"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=85.2918863296509%2C27.727512101996535%2C85.29970228672029%2C27.73124904731783&amp;layer=transportmap&amp;marker=27.729380590672307%2C85.29579430818558"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=83.42466652393342%2C27.685128936033788%2C83.42763572931291%2C27.686998150722793&amp;layer=transportmap&amp;marker=27.686064642312093%2C83.42615243865748"
             ></iframe>
           </div>
         </div>

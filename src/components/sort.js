@@ -6,15 +6,16 @@ const Sort = () => {
   return (
     <div className="sort-containner">
       <div className="category-containner">
-        <Link to={"/menu/starter"} className="category" id="cat1">
+        <Link to={"/menu/snacks"} className="category" id="cat1">
           <div className="cat-content">
-            <div>Starter</div>
+            <div>Snacks</div>
           </div>
         </Link>
-        <Link to={"/menu/mainCourse"} className="category" id="cat2">
+        <Link to={"/menu/burger-and-fries"} className="category" id="cat2">
           <div className="cat-content">
-            <div>Main</div>
-            <div>Course</div>
+            <div>Burger</div>
+            <div> And</div>
+            <div> Fries</div>
           </div>
         </Link>
         <Link to={"/menu/dessert"} className="category" id="cat3">

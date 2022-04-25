@@ -61,6 +61,7 @@ const Menu = (props) => {
             <>
               <div className="cat-name">Popular</div>
               {favourites.map((item) => {
+                if (item.attributes.menu.data == null) return;
                 return (
                   <Card
                     img={

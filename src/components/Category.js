@@ -13,7 +13,9 @@ const Category = (props) => {
         <CircularProgress color="secondary"></CircularProgress>
       ) : (
         <>
-          <div className="cat-name">{categoryMenus.attributes.Name}</div>
+          <div className="cat-name">
+            {categoryMenus.attributes.Name.toString().replaceAll("-", " ")}
+          </div>
           {categoryMenus.attributes.categories.data.map((item) => {
             return (
               <>
